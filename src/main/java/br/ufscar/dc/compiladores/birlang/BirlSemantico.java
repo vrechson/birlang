@@ -3,9 +3,6 @@ import br.ufscar.dc.compiladores.birl.BirlBaseVisitor;
 import br.ufscar.dc.compiladores.birl.BirlParser;
 import br.ufscar.dc.compiladores.birlang.BirlUtils.BirlType;
 
-//import br.ufscar.dc.compiladores.birlang.BirlUtils.Scopes;
-//import br.ufscar.dc.compiladores.birlang.BirlUtils.SymbleTable;
-//import br.ufscar.dc.compiladores.birlang.BirlUtils.TipoLA;
 
 public class BirlSemantico extends BirlBaseVisitor<Void> {
 
@@ -38,12 +35,6 @@ public class BirlSemantico extends BirlBaseVisitor<Void> {
             BirlType.adicionarErroSemantico(ctx.stop, " numero de atribuicoes insuficientes para informacoes de treino proximo a: "+ctx.stop.getText());
         }
 
-        if (ctx.DATA() != null) {
-            String array[] = new String[3];
-            array = ctx.DATA().getText().split("/");
-            System.out.println("data: "+array[0]);
-        }
-
         return null;
     }
 
@@ -65,7 +56,7 @@ public class BirlSemantico extends BirlBaseVisitor<Void> {
         for (var t: ctx.treino()) {
             for (var n : t.NUMINT()) {
                 if (Integer.parseInt(n.getText()) < 0) {
-                    BirlType.adicionarErroSemantico(ctx.stop, " valor em " + ctx.stop.getText() + " nao pode ser negativo.");
+                    BirlType.adicionarErroSemantico(ctx.stop, " valor " + n.getText() + " nao pode ser negativo.");
                 }
             }
         }

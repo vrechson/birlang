@@ -44,13 +44,13 @@ public class Principal {
             if (!BirlType.semanticError.isEmpty()) {
                 pw.println("Fim da compilacao");
             } else {
-//                LAGeradorC lac = new LAGeradorC();
-//                lac.visitPrograma(ast);
-//                try (PrintWriter pwc = new PrintWriter(args[1])) {
-//                    pw.println(lac.out.toString());
-//                }
+                BirlGenerator lac = new BirlGenerator();
+                lac.visitProgram(ast);
+                try (PrintWriter pwc = new PrintWriter(args[1])) {
+                    pw.println(lac.out.toString());
+                }
             }
-            pw.println("Fim da compilacao");
+            //pw.println("Fim da compilacao");
 
         }
     }
