@@ -34,4 +34,4 @@ END_TREINO
 ```
 
 output:
-missing: add output image here
+![2](https://user-images.githubusercontent.com/6394077/143508959-fd0b2725-77a9-45ea-a9e2-a993a844a406.PNG)
