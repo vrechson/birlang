@@ -12,6 +12,8 @@ docker run birlang exec input.acad workout.html
 ```
 
 # Examples
+
+input:
 ```
 nome: "Carlos O cria"
 treino: "Aerobico"
